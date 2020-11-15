@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8355F42C254B6D1E00E26CC2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8355F42B254B6D1E00E26CC2 /* main.cpp */; };
+		2B2DF69825562AD800B42637 /* Move.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B2DF69625562AD800B42637 /* Move.cpp */; };
+		8355F437254B6D6500E26CC2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8355F434254B6D6500E26CC2 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +24,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B2DF69625562AD800B42637 /* Move.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Move.cpp; sourceTree = "<group>"; };
+		2B2DF69725562AD800B42637 /* Move.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Move.hpp; sourceTree = "<group>"; };
+		2B39B89B2554B344005F8DB1 /* Events.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Events.hpp; sourceTree = "<group>"; };
+		2B39B8A12555C251005F8DB1 /* Parser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Parser.hpp; sourceTree = "<group>"; };
+		2B39B8A42555DF55005F8DB1 /* Reader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Reader.hpp; sourceTree = "<group>"; };
+		2B39B8A72555E3A6005F8DB1 /* Interpreter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Interpreter.hpp; sourceTree = "<group>"; };
+		2B39B8AA2555E5FD005F8DB1 /* Schemas.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Schemas.hpp; sourceTree = "<group>"; };
+		2B39B8AC255601E8005F8DB1 /* apple-price-level-book.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "apple-price-level-book.csv"; sourceTree = "<group>"; };
+		2B39B8AF25560998005F8DB1 /* Move.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Move.hpp; sourceTree = "<group>"; };
+		2B49632F25576D0500BC7962 /* CandleStick.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CandleStick.hpp; sourceTree = "<group>"; };
+		2B49633625576E3800BC7962 /* Stats.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Stats.hpp; sourceTree = "<group>"; };
+		2B49633B2557BD1B00BC7962 /* OrderBook.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OrderBook.hpp; sourceTree = "<group>"; };
+		2B496340255DFA6F00BC7962 /* RandomWalk.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RandomWalk.hpp; sourceTree = "<group>"; };
+		2B4963452560801000BC7962 /* Functors.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Functors.hpp; sourceTree = "<group>"; };
 		8355F428254B6D1E00E26CC2 /* Market */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Market; sourceTree = BUILT_PRODUCTS_DIR; };
-		8355F42B254B6D1E00E26CC2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		8355F434254B6D6500E26CC2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		8355F435254B6D6500E26CC2 /* Options.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Options.hh; sourceTree = "<group>"; };
+		8355F436254B6D6500E26CC2 /* Orders.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Orders.hh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +55,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B39B89D2555C131005F8DB1 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				2B39B8AC255601E8005F8DB1 /* apple-price-level-book.csv */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		2B39B89F2555C1F4005F8DB1 /* csv */ = {
+			isa = PBXGroup;
+			children = (
+				2B39B8A12555C251005F8DB1 /* Parser.hpp */,
+				2B39B8A42555DF55005F8DB1 /* Reader.hpp */,
+				2B39B8A72555E3A6005F8DB1 /* Interpreter.hpp */,
+				2B39B8AA2555E5FD005F8DB1 /* Schemas.hpp */,
+			);
+			path = csv;
+			sourceTree = "<group>";
+		};
+		2B39B8AD25560921005F8DB1 /* equity */ = {
+			isa = PBXGroup;
+			children = (
+				2B2DF69625562AD800B42637 /* Move.cpp */,
+				2B2DF69725562AD800B42637 /* Move.hpp */,
+			);
+			path = equity;
+			sourceTree = "<group>";
+		};
+		2B39F5182556185500B7446C /* util */ = {
+			isa = PBXGroup;
+			children = (
+				2B39B8AF25560998005F8DB1 /* Move.hpp */,
+				2B49632F25576D0500BC7962 /* CandleStick.hpp */,
+				2B49633B2557BD1B00BC7962 /* OrderBook.hpp */,
+				2B4963452560801000BC7962 /* Functors.hpp */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		2B49633325576E0000BC7962 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				2B49633625576E3800BC7962 /* Stats.hpp */,
+			);
+			path = math;
+			sourceTree = "<group>";
+		};
+		2B49633E255DFA1500BC7962 /* simulate */ = {
+			isa = PBXGroup;
+			children = (
+				2B496340255DFA6F00BC7962 /* RandomWalk.hpp */,
+			);
+			path = simulate;
+			sourceTree = "<group>";
+		};
 		8355F41F254B6D1E00E26CC2 = {
 			isa = PBXGroup;
 			children = (
@@ -57,7 +129,16 @@
 		8355F42A254B6D1E00E26CC2 /* Market */ = {
 			isa = PBXGroup;
 			children = (
-				8355F42B254B6D1E00E26CC2 /* main.cpp */,
+				2B49633E255DFA1500BC7962 /* simulate */,
+				2B49633325576E0000BC7962 /* math */,
+				2B39F5182556185500B7446C /* util */,
+				2B39B8AD25560921005F8DB1 /* equity */,
+				2B39B89F2555C1F4005F8DB1 /* csv */,
+				2B39B89D2555C131005F8DB1 /* data */,
+				8355F434254B6D6500E26CC2 /* main.cpp */,
+				8355F435254B6D6500E26CC2 /* Options.hh */,
+				8355F436254B6D6500E26CC2 /* Orders.hh */,
+				2B39B89B2554B344005F8DB1 /* Events.hpp */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -118,7 +199,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8355F42C254B6D1E00E26CC2 /* main.cpp in Sources */,
+				2B2DF69825562AD800B42637 /* Move.cpp in Sources */,
+				8355F437254B6D6500E26CC2 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +321,7 @@
 		8355F430254B6D1E00E26CC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J8Y2893V4R;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -249,6 +332,7 @@
 		8355F431254B6D1E00E26CC2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++2a";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J8Y2893V4R;
 				ENABLE_HARDENED_RUNTIME = YES;
