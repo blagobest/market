@@ -17,6 +17,7 @@
 #include "util/OrderBook.hpp"
 
 #include "simulate/RandomWalk.hpp"
+#include "fix/Parser.hpp"
 
 void test_order_book() {
     using Order = mkt::util::SimpleOrder<double, unsigned>;
@@ -90,8 +91,18 @@ void test_random_walk() {
     }
 }
 
+void test_fix_parser() {
+    std::string message = "8=FIX.4.2|9=65|35=A|49=SERVER|56=CLIENT|34=177|52=20090107-18:15:16|98=0|108=30|10=062|";
+    std::replace(message.begin(), message.end(), '|', static_cast<char>(0x1));
+    using String = std::string_view;
+    mkt::fix::Parser<mkt::fix::MapBasedStoragePolicy<String>, String> map_parser (message);
+    mkt::fix::Parser<mkt::fix::SequenceBasedStoragePolicy<String>, String> seq_parser (message);
+    assert (map_parser.length() == seq_parser.length());
+    std::cerr << "length: " << map_parser.length() << std::endl;
+}
+
 int main() {
-    test_random_walk();
+    test_fix_parser();
 
     return 0;
 }

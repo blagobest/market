@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B2DF69825562AD800B42637 /* Move.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B2DF69625562AD800B42637 /* Move.cpp */; };
+		2B4963552564775700BC7962 /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B4963532564775700BC7962 /* Parser.cpp */; };
 		8355F437254B6D6500E26CC2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8355F434254B6D6500E26CC2 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,8 @@
 		2B49633B2557BD1B00BC7962 /* OrderBook.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OrderBook.hpp; sourceTree = "<group>"; };
 		2B496340255DFA6F00BC7962 /* RandomWalk.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RandomWalk.hpp; sourceTree = "<group>"; };
 		2B4963452560801000BC7962 /* Functors.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Functors.hpp; sourceTree = "<group>"; };
+		2B4963532564775700BC7962 /* Parser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Parser.cpp; sourceTree = "<group>"; };
+		2B4963542564775700BC7962 /* Parser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Parser.hpp; sourceTree = "<group>"; };
 		8355F428254B6D1E00E26CC2 /* Market */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Market; sourceTree = BUILT_PRODUCTS_DIR; };
 		8355F434254B6D6500E26CC2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8355F435254B6D6500E26CC2 /* Options.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Options.hh; sourceTree = "<group>"; };
@@ -110,6 +113,15 @@
 			path = simulate;
 			sourceTree = "<group>";
 		};
+		2B4963522564772B00BC7962 /* fix */ = {
+			isa = PBXGroup;
+			children = (
+				2B4963532564775700BC7962 /* Parser.cpp */,
+				2B4963542564775700BC7962 /* Parser.hpp */,
+			);
+			path = fix;
+			sourceTree = "<group>";
+		};
 		8355F41F254B6D1E00E26CC2 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +141,7 @@
 		8355F42A254B6D1E00E26CC2 /* Market */ = {
 			isa = PBXGroup;
 			children = (
+				2B4963522564772B00BC7962 /* fix */,
 				2B49633E255DFA1500BC7962 /* simulate */,
 				2B49633325576E0000BC7962 /* math */,
 				2B39F5182556185500B7446C /* util */,
@@ -200,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B2DF69825562AD800B42637 /* Move.cpp in Sources */,
+				2B4963552564775700BC7962 /* Parser.cpp in Sources */,
 				8355F437254B6D6500E26CC2 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
