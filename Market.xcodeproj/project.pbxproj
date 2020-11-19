@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B2DF69825562AD800B42637 /* Move.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B2DF69625562AD800B42637 /* Move.cpp */; };
+		2B6C2BB125671C720084E7D4 /* Tag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6C2BB025671C720084E7D4 /* Tag.cpp */; };
 		8355F437254B6D6500E26CC2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8355F434254B6D6500E26CC2 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -39,9 +40,8 @@
 		2B496340255DFA6F00BC7962 /* RandomWalk.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RandomWalk.hpp; sourceTree = "<group>"; };
 		2B4963452560801000BC7962 /* Functors.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Functors.hpp; sourceTree = "<group>"; };
 		2B4963542564775700BC7962 /* Parser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Parser.hpp; sourceTree = "<group>"; };
-		2B6C2BA92565C5DC0084E7D4 /* Fix4.2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Fix4.2.hpp; sourceTree = "<group>"; };
-		2B6C2BAC2565CB660084E7D4 /* Fix5.0.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Fix5.0.hpp; sourceTree = "<group>"; };
 		2B6C2BAE2565CC2D0084E7D4 /* Tag.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tag.hpp; sourceTree = "<group>"; };
+		2B6C2BB025671C720084E7D4 /* Tag.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tag.cpp; sourceTree = "<group>"; };
 		8355F428254B6D1E00E26CC2 /* Market */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Market; sourceTree = BUILT_PRODUCTS_DIR; };
 		8355F434254B6D6500E26CC2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8355F435254B6D6500E26CC2 /* Options.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Options.hh; sourceTree = "<group>"; };
@@ -117,20 +117,11 @@
 		2B4963522564772B00BC7962 /* fix */ = {
 			isa = PBXGroup;
 			children = (
-				2B6C2BA82565C5BA0084E7D4 /* tags */,
+				2B6C2BAE2565CC2D0084E7D4 /* Tag.hpp */,
+				2B6C2BB025671C720084E7D4 /* Tag.cpp */,
 				2B4963542564775700BC7962 /* Parser.hpp */,
 			);
 			path = fix;
-			sourceTree = "<group>";
-		};
-		2B6C2BA82565C5BA0084E7D4 /* tags */ = {
-			isa = PBXGroup;
-			children = (
-				2B6C2BA92565C5DC0084E7D4 /* Fix4.2.hpp */,
-				2B6C2BAC2565CB660084E7D4 /* Fix5.0.hpp */,
-				2B6C2BAE2565CC2D0084E7D4 /* Tag.hpp */,
-			);
-			path = tags;
 			sourceTree = "<group>";
 		};
 		8355F41F254B6D1E00E26CC2 = {
@@ -223,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B6C2BB125671C720084E7D4 /* Tag.cpp in Sources */,
 				2B2DF69825562AD800B42637 /* Move.cpp in Sources */,
 				8355F437254B6D6500E26CC2 /* main.cpp in Sources */,
 			);

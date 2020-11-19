@@ -13,14 +13,10 @@
 #include <vector>
 #include <list>
 
-#include "tags/Fix4.2.hpp"
-#include "tags/Fix5.0.hpp"
+#include "Tag.hpp"
 
 namespace mkt {
 namespace fix {
-
-    static const int TAG_MSG_TYPE = 35;
-    static const int TAG_CHECKSUM = 10;
 
     // This could be made better by
     // conditionally using std::distance only if it's O(1)
@@ -35,9 +31,9 @@ namespace fix {
     public:
         void count(Iterator cur, int tag) noexcept {
             // see where we are so we can calculate the length
-            if (tag == TAG_MSG_TYPE) {
+            if (tag == Tag::MsgType) {
                 begin_msg_type = cur;
-            } else if (tag == TAG_CHECKSUM) {
+            } else if (tag == Tag::Checksum) {
                 begin_checksum = cur;
                 len = std::distance(begin_msg_type, begin_checksum);
             }
@@ -53,14 +49,14 @@ namespace fix {
         const unsigned char SOH = 0x1;
         const unsigned char EQUAL = '=';
         
-        unsigned char checksum;
+        unsigned char _checksum;
         StoragePolicy storage;
         LengthCalculator length_calc;
         
         void parse(const String & message) {
             auto cur = message.begin();
-            unsigned char sum = 0;
             while (cur != message.end()) {
+                unsigned char sum = 0;
                 // Read tag
                 auto sep = cur;
                 int tag = 0;
@@ -73,7 +69,7 @@ namespace fix {
                 length_calc.count(cur, tag);
                 // Skip EQUAL
                 sum += EQUAL;
-                ++sep;
+                std::advance(sep, 1);
                 // Find SOH
                 cur = sep;
                 while (cur != message.end() && *cur != SOH) {
@@ -82,19 +78,21 @@ namespace fix {
                 }
                 storage.store(tag, sep, cur);
                 // Skip SOH
+                sum += SOH;
                 std::advance(cur, 1);
                 // Save checksum
-                if (tag == TAG_CHECKSUM) {
-                    checksum = sum;
+                if (tag != Tag::Checksum) {
+                    _checksum += sum;
                 }
             }
         }
     public:
-        Parser(const String & message): storage(message) {
+        Parser(const String & message): _checksum(), storage(message) {
             parse(message);
         }
         
         size_t length() const { return length_calc.length(); }
+        unsigned char checksum() const { return _checksum; }
     };
 
     template <typename String, typename Map = std::map<int, String>>

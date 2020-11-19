@@ -92,13 +92,15 @@ void test_random_walk() {
 }
 
 void test_fix_parser() {
-    std::string message = "8=FIX.4.2|9=65|35=A|49=SERVER|56=CLIENT|34=177|52=20090107-18:15:16|98=0|108=30|10=062|";
+    std::string message =
+     "8=FIX.4.2|9=65|35=A|49=SERVER|56=CLIENT|34=177|52=20090107-18:15:16|98=0|108=30|10=062|";
+    //"8=FIX.4.2|9=49|35=5|34=1|49=ARCA|52=20150916-04:14:05.306|56=TW|10=157|";
     std::replace(message.begin(), message.end(), '|', static_cast<char>(0x1));
     using String = std::string_view;
     mkt::fix::Parser<mkt::fix::MapBasedStoragePolicy<String>, String> map_parser (message);
     mkt::fix::Parser<mkt::fix::SequenceBasedStoragePolicy<String>, String> seq_parser (message);
     assert (map_parser.length() == seq_parser.length());
-    std::cerr << "length: " << map_parser.length() << std::endl;
+    std::cerr << "length: " << map_parser.length() << " checksum: " << static_cast<int>(map_parser.checksum()) << std::endl;
 }
 
 int main() {
